@@ -1,4 +1,4 @@
-# We work in Ubuntu 20.04
+# We work in Ubuntu 18.04
 FROM ubuntu:18.04
 # Needed to use 'source' later on
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
