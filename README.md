@@ -1,15 +1,22 @@
 # applgrid_docker
-Builds a docker image for APPLgrid production.
+Builds a Docker image for APPLgrid production.
 
 ## Build instructions
-From inside the repo, run:
+First acquire the dependencies, applgridphoton and the NNPDF/external repo. Run:
+
+```
+git clone https://github.com/scarrazza/applgridphoton.git
+git clone git@github.com:NNPDF/external.git
+```
+
+Check out the correct branch of the NNPDF/external repo, and build using the standard Docker command:
 
 ```
 cd external && git checkout MG5_fixed && cd ..
 docker build -t applgrids .
 ```
 
-You should then be able to run the docker image with:
+You should then be able to run the Docker image with:
 
 ```
 docker run -it applgrids
