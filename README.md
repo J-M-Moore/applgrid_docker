@@ -5,6 +5,7 @@ Builds a docker image for APPLgrid production.
 From inside the repo, run:
 
 ```
+cd external && git checkout MG5_fixed && cd ..
 docker build -t applgrids .
 ```
 
