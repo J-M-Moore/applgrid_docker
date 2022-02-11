@@ -16,7 +16,7 @@ cd external && git checkout MG5_fixed && cd ..
 docker build -t applgrids .
 ```
 
-You should then be able to run the docker image with:
+You should then be able to run the Docker image with:
 
 ```
 docker run -it applgrids
