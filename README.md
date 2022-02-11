@@ -22,12 +22,8 @@ You should then be able to run the Docker image with:
 docker run -it applgrids
 ```
 
-## Known issues
-MG5 does not come with all the tools required for NLO analysis (namely ninja, collier) in this docker image, 
-and they must be downloaded on a first use of MG5. This is to be fixed in the Dockerfile
-eventually.
-
-A version that has all NLO tools is available from Docker Hub at <https://hub.docker.com/repository/docker/jamesmmoore/applgrids>.
+## Docker Hub image
+A pre-built image is available from Docker Hub, <https://hub.docker.com/repository/docker/jamesmmoore/applgrids>.
 
 
 ## APPLgrid production
