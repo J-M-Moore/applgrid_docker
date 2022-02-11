@@ -44,4 +44,10 @@ RUN apt-get install -y vim
 COPY pdf_lhapdf62.cc /hepsoftware/external/MG5_aMC_v2_6_4/Template/LO/Source/PDF/pdf_lhapdf62.cc 
 RUN rm /hepsoftware/external/MG5_aMC_v2_6_4/Template/LO/Source/PDF/makefile
 COPY makefile /hepsoftware/external/MG5_aMC_v2_6_4/Template/LO/Source/PDF/makefile
-# RUN cd /hepsoftware/external/MG5_aMC_v2_6_4 && echo "generate p p > t t~ [QCD]" >> nlo_test.txt && echo "output nlo_test" >> nlo_test.txt && echo "launch nlo_test" >> nlo_test.txt && bin/mg5_aMC nlo_test.txt
+RUN cd /hepsoftware/external/MG5_aMC_v2_6_4 && echo "generate p p > t t~ [QCD]" >> nlo_test.txt && echo "output nlo_test" >> nlo_test.txt && echo "launch nlo_test" >> nlo_test.txt && echo "2" >> nlo_test.txt && echo "set pdlabel=lhapdf" >> nlo_test.txt && bin/mg5_aMC nlo_test.txt
+# Remove the test folder
+RUN cd /hepsoftware/external/MG5_aMC_v2_6_4 && rm -r nlo_test
+# Compile APPLgrid_check after copying the corrected file across
+RUN rm /hepsoftware/external/APPLgrid_check/ratio_check.cxx
+COPY ratio_check.cxx /hepsoftware/external/APPLgrid_check/ratio_check.cxx
+RUN cd /hepsoftware/external/APPLgrid_check && make
