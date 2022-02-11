@@ -5,7 +5,6 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Add some new channels to the package manager
 RUN echo deb http://dk.archive.ubuntu.com/ubuntu xenial main >> /etc/apt/sources.list && echo deb http://dk.archive.ubuntu.com/ubuntu xenial universe >> /etc/apt/sources.list
 RUN apt-get update
-# Install the old compilers
 RUN apt-get install -y ca-certificates
 # Install Python 2.7.18
 RUN apt-get install -y python python-dev
