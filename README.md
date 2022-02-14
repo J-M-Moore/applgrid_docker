@@ -30,8 +30,16 @@ For the Cambridge PBSP group, you can run Docker commands on the HPC using Singu
 
 ```
 singularity pull docker://jamesmmoore/applgrids
-singularity run -it jamesmmoore/applgrids
+singularity run docker://jamesmmoore/applgrids
 ```
+
+You will then enter a Singularity environment, which is similar to the Docker environment. To access the correct directory, run:
+
+```
+cd /hepsoftware/external
+```
+
+in the Singularity environment.
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
