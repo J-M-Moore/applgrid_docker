@@ -32,7 +32,7 @@ For the Cambridge PBSP group, you can run Docker commands on the HPC using Singu
 conda install python=2.7 -y
 ```
 
-Now, to install the pre-builty Docker image recommended above, run:
+Now, to install the pre-built Docker image recommended above, run:
 
 ```
 singularity pull docker://jamesmmoore/applgrids
