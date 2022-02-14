@@ -50,6 +50,8 @@ cd ~/rds/hpc-work
 
 This should execute MG5. 
 
+Once you have made your APPLgrid, exit the Singularity environment. Afterwards, the output of the MG5 run should be in the directory in your home folder you ran from - thus you have access to the APPLgrid outside of the Singularity environment!
+
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
 
