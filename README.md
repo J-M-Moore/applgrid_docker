@@ -25,6 +25,13 @@ docker run -it applgrids
 ## Docker Hub image
 A pre-built image is available from Docker Hub, <https://hub.docker.com/repository/docker/jamesmmoore/applgrids>.
 
+## Running on the Cambridge HPC
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. For example, to install the pre-builty Docker image recommended above, run:
+
+```
+singularity pull docker://jamesmmoore/applgrids
+singularity run -it jamesmmoore/applgrids
+```
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
