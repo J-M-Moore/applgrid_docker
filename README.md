@@ -26,26 +26,30 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/repository/docker/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. However, it doesn't play nice with existing conda installations. Before running the following, please make sure that the Python version in your base environment is downgraded to 2.7:
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. However, it doesn't play nice with existing conda installations, so some small modifications will be needed.
 
-```
-conda install python=2.7 -y
-```
-
-Now, to install the pre-built Docker image recommended above, run:
+First, install and run the required Docker image:
 
 ```
 singularity pull docker://jamesmmoore/applgrids
 singularity run docker://jamesmmoore/applgrids
 ```
 
-You will then enter a Singularity environment, which is similar to the Docker environment. To access the correct directory, run:
+You will then enter a Singularity environment, which is similar to the Docker environment. Unfortunately, priority is still given to conda, so we must remove this:
 
 ```
-cd /hepsoftware/external
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
-in the Singularity environment.
+This will only affect the $PATH variable inside the Singularity environment, and will be restored to the usual path after you exit the environment. To run MG5, you must execute the command from somewhere in your home folder (otherwise, you do not have permission on the HPC). For example:
+
+```
+cd
+cd rds/hpc-work
+/hepsoftware/external/MG5_aMC_v2_6_4/bin/mg5_aMC
+```
+
+This should execute MG5. 
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
