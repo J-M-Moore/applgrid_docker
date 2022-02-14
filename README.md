@@ -44,8 +44,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 This will only affect the $PATH variable inside the Singularity environment, and will be restored to the usual path after you exit the environment. To run MG5, you must execute the command from somewhere in your home folder (otherwise, you do not have permission on the HPC). For example:
 
 ```
-cd
-cd rds/hpc-work
+cd ~/rds/hpc-work
 /hepsoftware/external/MG5_aMC_v2_6_4/bin/mg5_aMC
 ```
 
