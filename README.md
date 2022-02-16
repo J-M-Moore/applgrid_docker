@@ -23,7 +23,7 @@ docker run -it applgrids
 ```
 
 ## Docker Hub image
-A pre-built image is available from Docker Hub, <https://hub.docker.com/repository/docker/jamesmmoore/applgrids>.
+A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
 For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. However, it doesn't play nice with existing conda installations, so some small modifications will be needed.
