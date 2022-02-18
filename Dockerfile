@@ -67,3 +67,9 @@ COPY files_to_add/Makefile.inc /hepsoftware/apfelcomb/Makefile.inc
 RUN source hepsoftware/root/bin/thisroot.sh && cd /hepsoftware/apfelcomb && make
 # Get tabulate for displaying grids in apfelcomb
 RUN apt-get install python-pip -y && pip install tabulate
+#############################################################################################
+# For use only on the Cambridge HPC
+RUN rm -r /hepsoftware/external/MG5_aMC_v2_6_4/madgraph/various/cluster.py
+COPY files_for_hpc/cluster.py /hepsoftware/external/MG5_aMC_v2_6_4/madgraph/various/cluster.py
+RUN rm -r /hepsoftware/external/MG5_aMC_v2_6_4/input/mg5_configuration.txt
+COPY files_for_hpc/mg5_configuration.txt /hepsoftware/external/MG5_aMC_v2_6_4/input/mg5_configuration.txt
