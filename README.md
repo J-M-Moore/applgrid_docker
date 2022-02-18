@@ -30,7 +30,20 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. TODO: add new branch with MG5 modified for use on the cluster with Singularity.
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. First obtain, the image and run it:
+
+```
+singularity pull docker://jamesmmoore/applgrids
+singularity run docker://jamesmmoore/applgrids
+```
+
+Once in the Singularity environment, we must redefine the $PATH variable so we avoid any conflicts with an existing conda installation (don't worry, this only affects the environment and is thus completely temporary):
+
+```
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
+
+You should then be able to run the APPLgrid and FK-table generation as usual.
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
