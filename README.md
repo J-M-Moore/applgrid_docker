@@ -30,10 +30,25 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. First obtain, the image and run it:
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. You will need to use a slightly modified version of the Docker image that allows MG5 to interface nicely with the slurm-based cluster.
+
+If you would like to build from scratch, checkout the appropriate branch in this repository first:
 
 ```
-singularity pull docker://jamesmmoore/applgrids
+git checkout cambridge_hpc
+```
+
+and then build the Docker image from scratch as per the instructions above. 
+
+Alternatively, you can obtain the image from Docker Hub. If running on the HPC, the correct command to use is:
+
+```
+singularity run docker://jamesmmoore/applgrids:cambridge_hpc
+```
+
+Once you have obtained the image, you can run it using Singularity:
+
+```
 singularity run docker://jamesmmoore/applgrids
 ```
 
