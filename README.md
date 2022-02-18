@@ -43,7 +43,7 @@ and then build the Docker image from scratch as per the instructions above.
 Alternatively, you can obtain the image from Docker Hub. If running on the HPC, the correct command to use is:
 
 ```
-singularity run docker://jamesmmoore/applgrids:cambridge_hpc
+singularity pull docker://jamesmmoore/applgrids:cambridge_hpc
 ```
 
 Once you have obtained the image, you can run it using Singularity:
