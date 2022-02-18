@@ -51,11 +51,7 @@ RUN rm /hepsoftware/external/APPLgrid_check/ratio_check.cxx
 COPY files_to_add/ratio_check.cxx /hepsoftware/external/APPLgrid_check/ratio_check.cxx
 RUN source hepsoftware/root/bin/thisroot.sh && cd /hepsoftware/external/APPLgrid_check && make
 #############################################################################################
-# Install APFELcomb via the following
-# First install miniconda and set appropriate channels
-#RUN cd /hepsoftware && wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && chmod +x Miniconda3-latest-Linux-x86_64.sh && ./Miniconda3-latest-Linux-x86_64.sh -b -p /hepsoftware/miniconda3 && rm -r Miniconda3-latest-Linux-x86_64.sh
-#RUN export PATH=/hepsoftware/miniconda3/condabin:$PATH && conda init bash && conda config --set auto_activate_base false
-#RUN rm -r /root/.condarc && echo "channels:" >> /root/.condarc && echo " - https://packages.nnpdf.science/private" >> /root/.condarc && echo " - https://packages.nnpdf.science/public" >> /root/.condarc 
+# Install APFEL, NNPDF and APFELcomb via the following
 RUN apt-get install -y swig libarchive-dev python3 python3-dev python3-pip libgsl-dev sqlite3 libsqlite3-dev
 RUN pip3 install numpy
 RUN cd /hepsoftware && wget https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.6.3.tar.gz && tar -xf yaml-cpp-0.6.3.tar.gz && rm -r yaml-cpp-0.6.3.tar.gz && cd yaml-cpp-yaml-cpp-0.6.3 && mkdir bld && cd bld && cmake .. -DYAML_BUILD_SHARED_LIBS=ON && make && make install 
