@@ -1,12 +1,16 @@
 # applgrid_docker
-Builds a Docker image for APPLgrid production.
+Builds a Docker image for APPLgrid and FK-table production.
 
 ## Build instructions
-First acquire the dependencies, applgridphoton and the NNPDF/external repo. Run:
+First acquire the dependencies. From the applgrid_docker repository, run:
 
 ```
 git clone https://github.com/scarrazza/applgridphoton.git
 git clone git@github.com:NNPDF/external.git
+git clone git@github.com:NNPDF/nnpdf.git
+git clone https://github.com/scarrazza/fiatlux.git
+git clone https://github.com/scarrazza/apfel.git
+git clone https://github.com/NNPDF/apfelcomb.git
 ```
 
 Check out the correct branch of the NNPDF/external repo, and build using the standard Docker command:
@@ -26,7 +30,7 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. An example submit_file is included in the repository.
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. TODO: add new branch with MG5 modified for use on the cluster with Singularity.
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
@@ -58,3 +62,6 @@ launch nlo_test
 This time, you must pick iappl=2 (at this stage, the grids you prepared 
 on the first run are now being filled), but leave all other settings
 untouched. After the run completes, you have made an APPLgrid!
+
+## FK-table production
+TODO: write instructions for creating FK-tables from APPLgrids.
