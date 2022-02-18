@@ -32,7 +32,7 @@ A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesm
 ## Running on the Cambridge HPC
 For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. You will need to use a slightly modified version of the Docker image that allows MG5 to interface nicely with the slurm-based cluster.
 
-If you would like to build from scratch, checkout the appropriate branch in this repository first:
+If you would like to build things yourself, checkout the appropriate branch in this repository first:
 
 ```
 git checkout cambridge_hpc
