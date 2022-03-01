@@ -30,7 +30,9 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. Example submit files are included in the example folder on this branch. To make APPLgrids, run:
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. Example submit files are included in the example folder on this branch. You will need to make some changes to the files so that they point to the correct absolute paths for your setup on the HPC.
+
+To make APPLgrids, run:
 
 ```
 sbatch submit_prepare
