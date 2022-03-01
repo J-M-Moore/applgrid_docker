@@ -47,7 +47,7 @@ sbatch --array=1-100 submit_fill
 where --array=1-100 specifies that we want to make 100 different grids of a particular precision. To combine the grids, we run:
 
 ```
-combine_grids 100 17
+. combine_grids 100 17
 ```
 
 where 100 is the number of grids produced, and 17 is the index of the final bin. The results can then be found in the applgrids directory of the example folder.
