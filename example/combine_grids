@@ -1,0 +1,22 @@
+rm -r applgrids
+mkdir applgrids
+
+JOBS=$1
+GRIDS=$2
+
+for (( grid=0; grid<=${GRIDS}; grid++ ))
+do
+
+ARGS="job_1/output/Events/run_02/aMCfast_obs_${grid}.root"
+
+for (( job=2; job<=${JOBS}; job++))
+do
+
+ARGS=$ARGS" job_${job}/output/Events/run_02/aMCfast_obs_${grid}.root"
+
+done
+
+echo $ARGS
+
+singularity exec /home/jmm232/rds/hpc-work/singularity_builds/applgrids_latest.sif applgrid-combine -o applgrids/aMCfast_obs_${grid}.root $ARGS 
+done

@@ -30,7 +30,27 @@ docker run -it applgrids
 A pre-built image is available from Docker Hub, <https://hub.docker.com/r/jamesmmoore/applgrids>.
 
 ## Running on the Cambridge HPC
-For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. TODO: add new branch with MG5 modified for use on the cluster with Singularity.
+For the Cambridge PBSP group, you can run Docker commands on the HPC using Singularity. Example submit files are included in the example folder on this branch. You will need to make some changes to the files so that they point to the correct absolute paths for your setup on the HPC.
+
+To make APPLgrids, run:
+
+```
+sbatch submit_prepare
+```
+
+from the example folder. Once the job is done (it should take a very short time), we are ready to fill the grids. Run:
+
+```
+sbatch --array=1-100 submit_fill
+```
+
+where --array=1-100 specifies that we want to make 100 different grids of a particular precision. To combine the grids, we run:
+
+```
+. combine_grids 100 17
+```
+
+where 100 is the number of grids produced, and 17 is the index of the final bin. The results can then be found in the applgrids directory of the example folder.
 
 ## APPLgrid production
 To make an APPLgrid, enter the MG5 directory, and run MG5.
