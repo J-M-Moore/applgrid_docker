@@ -13,7 +13,7 @@ RUN apt-get install -y gfortran-7 && ln -s /usr/bin/gfortran-7 /usr/bin/gfortran
 # Install make, so we can actually compile anything at all
 RUN apt-get install -y make
 # Install Root 6.14/06.
-RUN mkdir /home/jmm232/rds/hpc-work/hepsoftware
+RUN mkdir /home/jmm232 && mkdir /home/jmm232/rds && mkdir /home/jmm232/rds/hpc-work && mkdir /home/jmm232/rds/hpc-work/hepsoftware
 RUN apt-get install -y wget
 # Some root packages are stupid and require interactive answers during installation, so demand that we always pick the default response
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
