@@ -92,4 +92,12 @@ on the first run are now being filled), but leave all other settings
 untouched. After the run completes, you have made an APPLgrid!
 
 ## FK-table production
-TODO: write instructions for creating FK-tables from APPLgrids.
+FK-tables can be produced using `apfelcomb`. It's best to start the docker image in bind-mount mode, bound to a folder which you will read and write FK-tables from, and will be accessible outside of the docker image. Once you have started the docker image in bind-mount mode, enter the `/hepsoftware/apfelcomb` directory. Currently, we need to do some technical fiddling before FK-tables can be produced; run:
+
+```
+apt-get update
+apt-get install git
+export LD_LIBRARY_PATH=/usr/local/lib
+```
+
+You should now be able to produce FK-tables by following the instructions in `apfelcomb`.
